@@ -3,7 +3,9 @@ import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 
 const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL || 'postgresql://user:password@localhost:5432/teenup?schema=public',
+  connectionString:
+    process.env.DATABASE_URL ||
+    'postgresql://user:password@localhost:5432/teenup?schema=public',
 });
 const prisma = new PrismaClient({ adapter });
 
