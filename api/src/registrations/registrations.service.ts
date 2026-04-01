@@ -16,7 +16,7 @@ export class RegistrationsService {
     // Since we don't have the specific *session* date, we might assume the next session of this class.
     // For simplicity, let's assume we check against the 'createdAt' or just a placeholder for logic.
     // Actually, classes have day_of_week and time_slot.
-    
+
     // Placeholder logic for 24h refund
     const now = new Date();
     // In a real app, we would calculate the next session date.

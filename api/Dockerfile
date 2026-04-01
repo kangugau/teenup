@@ -17,11 +17,16 @@ WORKDIR /app
 
 RUN npm install -g pnpm
 
+# Copy everything needed for runtime
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/tsconfig.json ./tsconfig.json
+COPY --from=builder /app/start.sh ./start.sh
+
+RUN chmod +x ./start.sh
 
 EXPOSE 3000
 
-CMD ["pnpm", "start:prod"]
+CMD ["./start.sh"]

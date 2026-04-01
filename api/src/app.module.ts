@@ -9,7 +9,14 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { RegistrationsModule } from './registrations/registrations.module';
 
 @Module({
-  imports: [PrismaModule, ParentsModule, StudentsModule, ClassesModule, SubscriptionsModule, RegistrationsModule],
+  imports: [
+    PrismaModule,
+    ParentsModule,
+    StudentsModule,
+    ClassesModule,
+    SubscriptionsModule,
+    RegistrationsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

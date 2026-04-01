@@ -43,8 +43,12 @@ export class SubscriptionsService {
       where: { id },
       data: {
         ...updateSubscriptionDto,
-        startDate: updateSubscriptionDto.startDate ? new Date(updateSubscriptionDto.startDate) : undefined,
-        endDate: updateSubscriptionDto.endDate ? new Date(updateSubscriptionDto.endDate) : undefined,
+        startDate: updateSubscriptionDto.startDate
+          ? new Date(updateSubscriptionDto.startDate)
+          : undefined,
+        endDate: updateSubscriptionDto.endDate
+          ? new Date(updateSubscriptionDto.endDate)
+          : undefined,
       },
     });
   }
